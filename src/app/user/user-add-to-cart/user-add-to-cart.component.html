@@ -1,0 +1,66 @@
+
+<app-user-header></app-user-header>
+  <table class="table_cart" style="margin-top: -650px; margin-left: 350px;">
+    <thead>
+      <tr class="table_cart--heading" style="background-color: bisque;">
+        <th>
+          Product
+        </th>
+        <th>
+          Product name
+        </th>
+        <th>
+          Qty
+        </th>
+        <th>
+          Cost
+        </th>
+        <th>
+          Action
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="item-row" *ngFor="let product of addData" >
+        <td >
+          <img src="{{ product.productImage }}" height="100px" class="card-img-top">
+        </td>
+        <td>
+          <p class="card-text">{{ product.productName }}</p>
+        </td>
+        <td>
+          
+          <input type="text" class="input_qty" value={{product.productqty}}  placeholder="Your name">
+          <span class="add_qty"><button (click)="Addqty(product.id)"><i class="fa-solid fa-plus" style="color: #000000;"></i></button> </span>&nbsp; &nbsp; <span class="remove_qty"> <button (click)="subqty(product.id)"><i class="fa-solid fa-minus" style="color: #000000;"></i></button> </span>
+        </td>
+        <td class="item_cost">Rs.
+			<span  class="item-cost-val">{{ product.totalprice }} </span>/-
+        </td>
+			<td><button style="color: #f40000;" (click)="removeItem(product.id)" ><i class="fa-solid fa-trash" style="color: #f40000;"></i>Remove</button></td>
+      </tr>
+      <table class="cart-totals">
+        <tbody >
+          <tr class="total">
+            <th>Total</th>
+            <td>{{Total}}</td>
+          </tr>
+          <tr class="discount_percent">
+            <th>Discount</th>
+            <td>{{descount}}</td>
+          </tr>
+          <tr class="grand_total">
+            <th>Grand Total</th>
+            <td>{{grandtotal}}</td>
+          </tr>
+        </tbody>
+      </table>
+  </table>
+  <div class="btn">
+  <div class="row">
+    <button class="mybtn col-md-4"(click)="payNow()">payment</button> &nbsp; &nbsp;
+  <button class="mybtn col-md-4" (click)="Openinvoice()">Open your invoice</button> &nbsp; &nbsp;
+  <button class="mybtn col-md-4" (click)="Dowloadinvoice()">Dowload your invoice</button>  &nbsp;&nbsp;
+  <button class="mybtn col-md-4" (click)="Printinvoice()">Print your invoice</button>
+</div>
+</div>
+<app-user-footer></app-user-footer>

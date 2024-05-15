@@ -1,0 +1,67 @@
+<app-user-header></app-user-header>
+<div class="section-fluid-main" style="margin-top: -750px;">
+    <div class="section">
+          <div class="info-wrap mob-margin">
+              <p class="title-up">Product Full Detail</p>
+              <h2>{{product.productName}}</h2>
+              <h4>{{product.productOfferPrice}} <span>{{product.productActualPrice}}</span></h4>	
+              <div class="section-fluid">
+                  <input class="desc-btn" type="radio" id="desc-1" name="desc-btn" checked/>
+                  <label for="desc-1">{{product.productDesc}}</label>
+                  
+                  <h4>{{product.productColour}}</h4> <br>
+                  <h4>{{product.productSize}}</h4> 
+                  <input class="desc-btn" type="radio" id="desc-2" name="desc-btn"/>
+                
+               
+                    <!-- <img [src]="item.productImage" height="500px" width="500px"  style="margin-right: 500px;"> -->
+        
+                  <div class="section-fluid desc-sec accor-2">
+                      <div class="section-inline">
+                          <p><span>76</span>cm<br>Lenght</p>
+                      </div>	
+                      <div class="section-inline">
+                          <p><span>68</span>cm<br>Width</p>
+                      </div>
+                      <div class="section-inline">
+                          <p><span>87</span>cm<br>Height</p>
+                      </div>
+                      <div class="section-inline">
+                          <p><span>10</span>kg<br>Weight</p>
+                      </div>
+                  </div>	
+              </div>	
+              <h5>Choose upholstery:</h5>
+          </div>
+          <div class="clearfix"></div>
+          <input class="color-btn for-color-1" type="radio" id="color-1" name="color-btn" checked/>
+          <label class="first-color" for="color-1"></label> 
+          <input class="color-btn for-color-2" type="radio" id="color-2" name="color-btn"/>
+          <label class="color-2" for="color-2"></label> 
+          <input class="color-btn for-color-3" type="radio" id="color-3" name="color-btn"/>
+          <label class="color-3" for="color-3"></label> 
+          <input class="color-btn for-color-4" type="radio" id="color-4" name="color-btn"/>
+          <label class="color-4" for="color-4"></label> 
+          <input class="color-btn for-color-5" type="radio" id="color-5" name="color-btn"/>
+          <label class="color-5" for="color-5"></label> 
+          <input class="color-btn for-color-6" type="radio" id="color-6" name="color-btn"/>
+          <label class="color-6" for="color-6"></label> 
+          <div class="clearfix"></div>
+          <div class="info-wrap">
+            <button class="btn" (click)="getaddtocart(product.id)"><i class="uil uil-shopping-cart icon" ></i> Add To Cart</button>
+          </div>
+            <div class="img-wrap chair-1">  <img [src]="product.productImage" height="500px" width="430px"  style="margin-right: 500px;"></div>
+	      	<div class="img-wrap chair-2">  <img [src]="product.productImage" height="500px" width="430px"  style="margin-right: 500px;"></div>	
+	      	<div class="img-wrap chair-3">  <img [src]="product.productImage" height="500px" width="430px"  style="margin-right: 500px;"></div>
+	      	<div class="img-wrap chair-4">  <img [src]="product.productImage" height="500px" width="430px"  style="margin-right: 500px;"></div>
+	      	<div class="img-wrap chair-5">  <img [src]="product.productImage" height="500px" width="430px"  style="margin-right: 500px;"></div>
+	      	<div class="img-wrap chair-6">  <img [src]="product.productImage" height="500px" width="430px"  style="margin-right: 500px;"></div>		
+          <div class="back-color"></div>
+          <div class="back-color chair-2"></div>	
+          <div class="back-color chair-3"></div>	
+          <div class="back-color chair-4"></div>	
+          <div class="back-color chair-5"></div>	
+          <div class="back-color chair-6"></div>	
+    </div>
+    <app-user-footer></app-user-footer>
+</div>

@@ -1,0 +1,54 @@
+<div style="margin-left: 400px; margin-top: -70px;">
+<div class="container">
+	<div class="card">
+	  <div class="card_title">
+		<h1>Add Products</h1>
+	  </div>
+	  <div class="form">
+	  <form action="/register" method="post" *ngIf="Dataform" [formGroup]="Dataform">
+		<input type="text" name="productName" formControlName="productName" id="productName" placeholder="productName" />
+		<input type="text" name="productDesc"  formControlName="productDesc" placeholder="productDesc" id="productDesc" />
+		<input type="text" name="productActualPrice" formControlName="productActualPrice" placeholder="productActualPrice" id="productActualPrice" />
+        <input type="text" name="productOfferPrice"  formControlName="productOfferPrice" placeholder="productOfferPrice" id="productOfferPrice" />
+        <input type="text" name="productSize"  formControlName="productSize" placeholder="productSize" id="productSize" />
+		<input type="text" name="productColour" formControlName="productColour" placeholder="productColour" id="productColour" />      
+        <div class="row"> <div  class="col-md-9 ms-5">
+            <input type="file" name="productImage" placeholder="productImage" id="productImage"accept="image/*" (change)="previewImage($event)" />
+            </div>  
+            <div class="col-md-3">
+              <img [src]="url" *ngIf="url" id="preview">
+          </div>
+        </div>
+		<button (click)="addProduct()">Sign Up</button>
+		</form>
+	  </div>
+	</div>
+  </div>
+</div>
+<table style="margin-left: 400px; width: 1050px;">
+	<thead>
+	  <tr>
+		<th>Product Name</th>
+		<th>Product Desc</th>
+		<th>Product Actual Price</th>
+		<th>Product offer price</th>
+		<th>Product Size</th>
+		<th>Product Colour</th>
+		<th>Product Image</th>
+		<th>Action</th>
+	  </tr>
+	</thead>
+	<tbody *ngFor="let item of Product">		
+	  <tr>
+		<td data-column="First Name">{{item.productName}}</td>
+		<td data-column="Last Name">{{item.productDesc}}</td>
+		<td data-column="Job Title">{{item.productActualPrice}}</td>
+		<td data-column="Twitter">{{item.productOfferPrice}}</td>
+		<td data-column="Twitter">{{item.productSize}}</td>
+		<td data-column="Twitter">{{item.productColour}}</td>
+		<td data-column="Twitter"><img [src]="item.productImage" alt="Product Image" style="width: 70px; height: 70px;" ></td>
+		<td></td>
+	  </tr>
+	 
+	</tbody>
+  </table>
